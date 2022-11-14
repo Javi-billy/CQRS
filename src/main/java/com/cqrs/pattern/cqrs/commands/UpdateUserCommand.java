@@ -6,11 +6,6 @@ import java.util.Set;
 import com.cqrs.pattern.domain.Address;
 import com.cqrs.pattern.domain.Contact;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-@Data
-@AllArgsConstructor
 public class UpdateUserCommand {
 
 	private String userId;

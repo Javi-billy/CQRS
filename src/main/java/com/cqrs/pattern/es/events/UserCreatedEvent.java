@@ -38,4 +38,27 @@ public class UserCreatedEvent extends Event {
 		this.lastName = lastName;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o == this)
+			return true;
+		if (!(o instanceof UserCreatedEvent))
+			return false;
+		UserCreatedEvent other = (UserCreatedEvent) o;
+		if (!other.canEqual((Object) this))
+			return false;
+		if (!super.equals(o))
+			return false;
+		if (this.userId != other.userId)
+			return false;
+		if (this.firstName != other.firstName)
+			return false;
+		if (this.lastName != other.lastName)
+			return false;
+		return true;
+	}
+
+	protected boolean canEqual(Object other) {
+		return other instanceof UserCreatedEvent;
+	}
 }
